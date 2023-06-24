@@ -1,8 +1,11 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     String msg = "Android : ";
@@ -42,4 +45,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d(msg,"This is onDestroy");
     }
 
+    public void startService(View view){
+        startService(new Intent(getBaseContext(), MyService.class));
+    }
+
+    public void stopService(View view){
+        stopService(new Intent(getBaseContext(), MyService.class));
+    }
 }
